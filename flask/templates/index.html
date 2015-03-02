@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Letsy - Het Universele Online Ruilmiddel
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/main.css" type="text/css">
+  </head>
+  <body>
+    <img id="logo" src="/static/letsy.png" alt="Letsy">
+    <div class="tour">
+      <h1>
+        Het Universele Online Ruilmiddel
+      </h1>
+
+      <div id="photo">
+        <div style="overflow:hidden; opacity:.85">
+          <img src="/static/sunset.jpg" width="338" height="500" alt="Foto van een hand die de ondergaande zon vasthoudt" style="margin-top:-120px; margin-bottom:-65px; margin-left: -10px">
+        </div>
+
+        <div style="width: 100%; opacity:.8; text-align:center">
+          <small style="font-size:9px">&ldquo;Everything&rsquo;s in your hands&rdquo; &mdash; <a href="http://www.flickr.com/photos/notsogoodphotography/3300637880/">Ibrahim Iujaz</a></small>
+        </div>
+      </div>
+      
+      <p>
+        <nobr>Letsy is een</nobr> gemakkelijke en veilige munteenheid voor elke <a href="http://nl.wikipedia.org/wiki/Lokale_ruileconomie">lokale ruileconomie</a>. Iedereen met een emailadres is namelijk klaar om Letsy's te ontvangen en uit te geven. Gebruik Letsy's bijvoorbeeld voor:
+      </p>
+      <ul>
+        <li>het bijhouden van gunsten in een vriendengroep
+        <li>het doen van klusjes voor de buren
+        <li>de betaling van spullen op een rommelmarkt
+        <li>het uitwisselen van diensten via internet
+        <li>de ruilhandel tussen de leden van een vereniging
+        <li>het officiele ruilmiddel van een <a href="http://www.letscontact.nl/">LETSkring</a>
+      </ul>
+      <p>      
+        Letsy staat voor <b>L</b>ocaal <b>E</b>conomisch <b>T</b>ransactie <b>Sy</b>steem.
+      </p>
+    </div>
+    
+    <div class="tour">
+      <h1>
+        Iedereen heeft een Letsy-account
+      </h1>
+      <p>
+        Je hoeft geen lid te worden voordat je Letsy&rsquo;s kunt ontvangen. Iedereen met een emailadres kan inloggen, het saldo bekijken en Letsy&rsquo;s overmaken naar anderen. Voor een optimaal gemak en veiligheid  maken we voor het inloggen gebruik van <a href="https://login.persona.org/">Mozilla Persona</a>.
+      </p>
+    </div>
+    <div class="tour">
+      <h1>
+        Bekijk hoeveel Letsy&rsquo;s jij hebt!
+      </h1>
+      <p>
+        Klik op de knop om in te loggen. Het enige dat je nodig hebt is een emailadres. Eenmaal ingelogd kun je je huidige saldo bekijken en Letsy&rsquo;s overmaken naar anderen.
+      </p>
+      <div style="padding:1.5em 0">
+        <a class="login_link button" href="/login/">inloggen</a>
+        <a class="login_link button" href="/login/" id="top_right_button">inloggen</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin: 40px">
+      Letsy is een project van <a href="http://r2src.com/" style="font-family:serif"><img border="0" src="http://r2src.com/logo_small.png" alt="(logo)" style="vertical-align:top"> Return to the Source</a>
+    </p>
+
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://login.persona.org/include.js"></script>
+    <script>
+      $(function(){
+        $(".login_link").click(function(e) {
+          // e.preventDefault();
+          // navigator.id.request();
+        });
+      });
+      
+      navigator.id.watch({
+        loggedInUser: null,
+        onlogin: function(assertion) {
+          // send assertion to server
+        },
+        onlogout: function() {
+          // destroy session
+        }
+      });
+    </script>
+  </body>
+</html>

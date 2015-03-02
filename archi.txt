@@ -1,0 +1,71 @@
+functions:
+- login
+- set your name
+- see how many letsies you have
+- see your transaction history
+- transfer letsies to someone else
+
+screens:
+- homepage
+  * description
+  * login link
+- welcome new user
+  * welcome message
+  * enter your name
+- my transactions
+  * nr of letsies
+  * transaction log:
+    - sort by
+      * date
+      * from/to
+      * amount
+  * new transaction
+    - enter name OR email address
+    - write a description
+    - click send
+  * logout link
+
+auth procedure:
+- user enters email and clicks 'login'
+- user receives email with login link
+- user clicks link and is logged in
+
+auth procedure details:
+- user enters email and clicks 'login'
+- system performs the following checks:
+  * did we send mail to this address more than x times in the past y hours?
+  * did we send mail for this browser fingerprint more than x times in the past y hours?
+  * did we send mail for this ip address more than x times in the past y hours?
+- system generates a login token and an expiry time and stores it linked to the user
+- system emails a login link containing the token to the requested address
+- user opens email and clicks link
+- system looks up the user belonging to the token
+- system checks if the current time isn't later than the expiry time
+- system generates a cookie token and stores it linked to the user
+- system send token as a secure, infinitely persistent cookie to the user
+- user sends back the cookie on every subsequent request
+- system authenticates the user on every subsequent request
+- everybody's happy
+
+auth relations:
+- login_token
+  * token (PK)
+  * expiry time
+  * user.id
+- cookie_token
+  * token (PK)
+  * user.id
+
+relations:
+- user
+  * id (PK)
+  * date
+  * email address
+  * name
+  * balance (NF violation!)
+- transaction
+  * sending user.id
+  * receiving user.id
+  * date
+  * amount
+  * description

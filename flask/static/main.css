@@ -1,0 +1,179 @@
+html, body 
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #333;
+  background: #fea;
+  background-image: -ms-linear-gradient(top left, #fea 0%, #ca9 100%);
+  background-image: -moz-linear-gradient(top left, #fea 0%, #ca9 100%);
+  background-image: -o-linear-gradient(top left, #fea 0%, #ca9 100%);
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #fea), color-stop(1, #ca9));
+  background-image: -webkit-linear-gradient(top left, #fea 0%, #ca9 100%);
+  background-image: linear-gradient(to bottom right, #fea 0%, #ca9 100%);
+  min-height: 100%;
+  }
+
+p, ul
+{
+  line-height: 1.5em;
+  }
+
+h1, h2, h3
+{
+  text-shadow: rgba(0,0,0,.5) 1px 1px 1px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  }
+
+#logo
+{
+  margin-left: 15%;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  }
+
+#photo
+{ 
+  float:right;
+  padding:5px 0 28px 28px;
+  }
+
+#top_right_button
+{
+  position:absolute;
+  top:20px;
+  right:15%;
+  }
+
+div.tour
+{
+  border-top: 4px solid #ffe;
+  border-bottom: 4px solid #cba;
+  border-top-color: rgba(255,255,255,.5);
+  padding: 20px 15%;
+  margin: 40px 0;
+  background: #eec;
+  background: rgba(255,255,255,.3);
+  overflow: hidden;
+  }
+
+.debit { font-size: 1.5em }
+.positive { color: green }
+.negative { color: red }
+.time { font-size: .7em }
+
+#transactions
+{ 
+  margin: 40px 0;
+  border: 3px solid #cba;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background: #ffe;
+  }
+
+#transactions th
+{
+  padding: 15px;
+  text-align: left;
+  border-bottom: 3px solid #cba;
+  background-image: url("/static/bg.gif");     
+  cursor: pointer; 
+  font-weight: bold; 
+  background-repeat: no-repeat; 
+  background-position: center left;
+  padding-left: 20px; 
+  }
+
+#transactions th.headerSortUp
+{ 
+  background-image: url("/static/asc.gif"); 
+  //color: blue; 
+  }
+
+#transactions th.headerSortDown
+{ 
+  background-image: url("/static/desc.gif"); 
+  //color: blue; 
+  } 
+
+#transactions tr.odd
+{
+  background: #faf4e1;
+  }
+
+#transactions td
+{ 
+  padding: 15px;
+  border-bottom: 1px solid #cba;
+  }
+
+.button
+{
+  border: 1px solid #bba;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 0 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 0 10px;
+  box-shadow: inset #fff 1px 1px 1px;
+  padding: 7px 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: rgba(255,255,255,.5) 1px 1px 0;
+  color: #000000;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+
+.button:hover
+{
+  background: #ffdd66;
+  }
+
+@media only screen and (max-device-width: 768px)
+{
+  #logo
+  {
+    margin-left: 15px;
+    }
+
+  div.tour 
+  { 
+    margin: 0;
+    padding: 10px;
+    }
+
+  #photo
+  { 
+    float: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+
+  #top_right_button
+  {
+    right: 20px;
+    }
+ 
+  #transactions
+  { 
+    margin: 20px 0;
+    }
+
+  #transactions th
+  {
+    padding: 3px;
+    padding-left: 20px; 
+    }
+
+  #transactions td
+  { 
+    padding: 3px;
+    border-bottom: 1px solid #cba;
+    }
+  
+}

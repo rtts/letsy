@@ -1,0 +1,29 @@
+      <table id="transactions">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Van/Naar</th>
+            <th>Bij</th>
+            <th>Af</th>
+            <th>Beschrijving</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tr in transactions %}
+          <tr>
+            <td class="date">
+              {{tr.date}}
+            </td>
+            <td align="right" class="debit">
+              {{tr.debit}}
+            </td>
+            <td align="right" class="credit">
+              {{tr.credit}}
+            </td>
+            <td class="description">
+              {{tr.description}}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>

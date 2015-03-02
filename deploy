@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+from fabric.api import *
+local('rsync -av --delete flask/ www@rtts.eu:letsy')
+env.host_string = 'rtts.eu'
+env.user = 'origin'
+sudo('killall -SIGHUP uwsgi')

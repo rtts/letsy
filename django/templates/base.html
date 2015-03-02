@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}Letsy - Het Universele Online Ruilmiddel{% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/main.css" type="text/css">
+  </head>
+  <body>
+    <img id="logo" src="/static/letsy.png" alt="Letsy">
+    
+    {% block main %}
+    {% endblock %}
+
+    <p style="text-align:center; margin: 40px">
+      Letsy is een project van <a href="http://r2src.com/" style="font-family:serif"><img border="0" src="http://r2src.com/logo_small.png" alt="(logo)" style="vertical-align:top"> Return to the Source</a>
+    </p>
+  </body>
+</html>

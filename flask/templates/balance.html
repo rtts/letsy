@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Letsy - Overzicht van {{name}}
+    </title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/main.css" type="text/css">
+  </head>
+  <body>
+    <img id="logo" src="/static/letsy.png" alt="Letsy">
+    <a class="logout_link button" href="/" id="top_right_button">uitloggen</a>
+    
+    <center>
+    <div style="width:200px; height:200px; line-height:200px; border-radius:100px; background:red; font-size: 5em">
+      142
+    </div>
+    </center>
+
+    <div class="tour">
+      <h1>Transactie-overzicht</h1>
+      <table id="transactions" class="tablesorter" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th><img id="logo" height="30" src="/static/letsy.png" alt="Letsy" style="position:relative; left:-10px"></th>
+            <th>Datum</th>
+            <th>Beschrijving</th>
+            <th>Persoon</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tr in transactions %}
+          <tr>
+            <td align="right">
+              {% if tr.debit | is_positive %}<span class="debit positive"><span style="font-size:.9em; vertical-align:top">+</span>{{tr.debit}}</span>
+              {% else %}<span class="debit negative">-{{tr.debit|abs}}</span>{% endif %}
+            </td>
+            <td>
+              <span class="time">{{ tr.date.strftime('%b %d, <br>%Y <br>%H:%M') |safe}}</time>
+            </td>
+            <td>
+              {{ tr.description }}
+            </td>
+            <td>
+              <a href="#">{{ tr.other }}</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <p style="text-align:center; margin: 40px">
+      Letsy is een project van <a href="http://r2src.com/" style="font-family:serif"><img border="0" src="http://r2src.com/logo_small.png" alt="(logo)" style="vertical-align:top"> Return to the Source</a>
+    </p>
+
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.tablesorter.js"></script> 
+    <script src="https://login.persona.org/include.js"></script>
+    <script>
+
+      $(function(){ 
+        $("#transactions").tablesorter({
+          sortList: [[1,1]],
+          widgets: ['zebra'] 
+        });
+      }); 
+      
+      $(function(){
+        $(".logout_link").click(function(e) {
+        });
+      });
+      
+      navigator.id.watch({
+        loggedInUser: null,
+        onlogin: function(assertion) {
+          // send assertion to server
+        },
+        onlogout: function() {
+          // destroy session
+        }
+      });
+    </script>
+  </body>
+</html>
